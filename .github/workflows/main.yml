@@ -32,3 +32,4 @@ jobs:
           bit -v && bit import
           bit status
           bit test
+        working-directory: ${{env.working-directory}}
