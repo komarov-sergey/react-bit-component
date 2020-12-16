@@ -24,8 +24,12 @@ jobs:
       - uses: actions/checkout@v2
 
       # Install dependencies and build app
+      - name: Show ls 1
+        run: ls
       - name: Go to component folder
         run: cd exporter
+      - name: Show ls 2
+        run: ls
       - name: show path
         run: pwd
       - name: Install Dependencies
