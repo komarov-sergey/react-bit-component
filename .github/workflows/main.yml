@@ -27,7 +27,7 @@ jobs:
       - name: Show ls 1
         run: ls
       - name: Go to component folder
-        run: cd /home/runner/work/react-bit-component/react-bit-component/exporter
+        run: cd /home/runner/work/react-bit-component/exporter
       - name: Show ls 2
         run: ls
       - name: Go to component folder
