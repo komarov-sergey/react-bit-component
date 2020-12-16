@@ -18,6 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+      working-directory: ./exporter
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -27,14 +28,10 @@ jobs:
       - name: Show ls 1
         run: ls
       - name: Go to component folder
-        run: cd /home/runner/work/react-bit-component/exporter
-      - name: Show ls 2
-        run: ls
-      - name: Go to component folder
-        run: cd ./exporter
-      - name: show path
-        run: pwd
+        run: exporter
       - name: Install Dependencies
         run: npm install
+        working-directory: ${{env.working-directory}}
       - name: Build app
         run: npm run build-dev
+        working-directory: ${{env.working-directory}}
