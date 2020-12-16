@@ -25,10 +25,8 @@ jobs:
       - uses: actions/checkout@v2
 
       # Install dependencies and build app
-      - name: Show ls 1
-        run: ls
-      - name: Go to component folder
-        run: exporter
+      # - name: Go to component folder
+      #   run: exporter
       - name: Install Dependencies
         run: npm install
         working-directory: ${{env.working-directory}}
