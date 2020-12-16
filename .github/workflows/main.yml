@@ -23,9 +23,12 @@ jobs:
         working-directory: ${{env.working-directory}}
       - name: Install bit-bin
         run: sudo npm install bit-bin -g
-      - name: bit config
+      - name: Bit build & Bit test
         run: |
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
-          bit config
+          bit config 
+          bit -v && bit import
+          bit status
+          bit test
