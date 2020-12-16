@@ -30,6 +30,8 @@ jobs:
         run: cd ./exporter
       - name: Show ls 2
         run: ls
+      - name: Go to component folder
+        run: cd ./exporter
       - name: show path
         run: pwd
       - name: Install Dependencies
