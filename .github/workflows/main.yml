@@ -1,0 +1,47 @@
+name: Build CI
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "exporter/**"
+  # pull_request:
+  #   branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      BIT_TOKEN: ${{ secrets.BIT_TOKEN }}
+      working-directory: ./exporter
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+        working-directory: ${{env.working-directory}}
+      - name: Build app
+        run: npm run build-dev
+        working-directory: ${{env.working-directory}}
+      - name: Install bit-bin
+        run: sudo npm install bit-bin -g
+      - name: bit config
+        run: |
+          bit config set analytics_reporting false
+          bit config set anonymous_reporting false
+          bit config set user.token $BIT_TOKEN
+          bit config
+        working-directory: ${{env.working-directory}}
+      - name: install compiler
+        run: npm i @bit/bit.envs.compilers.react-typescript
+        working-directory: ${{env.working-directory}}
+      - name: bit import
+        run: |
+          bit -v && bit import
+        working-directory: ${{env.working-directory}}
+      - name: bit export
+        run: |
+          bit status
+          bit tag -a
+          bit export
+        working-directory: ${{env.working-directory}}
