@@ -1,6 +1,6 @@
 import React from "react";
 
-const App2 = () => <h1>Hello22225</h1>;
+const App2 = () => <h1>Hello2</h1>;
 
 export default App2;
 
