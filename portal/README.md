@@ -1,1 +1,1 @@
-This is example app that import component
+This is example app that import component.
