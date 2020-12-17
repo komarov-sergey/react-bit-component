@@ -3,6 +3,7 @@ name: Build CI
 on:
   pull_request:
     branches: [master]
+      types: [opened, reopened]
       paths:
       - "exporter/**"
 
