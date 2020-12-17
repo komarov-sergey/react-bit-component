@@ -3,7 +3,8 @@ name: Build CI
 on:
   pull_request:
     branches: [master]
-      paths:
+    types: [opened, reopened]
+    paths:
       - "exporter/**"
 
 jobs:
