@@ -35,7 +35,7 @@ jobs:
           bit config
         working-directory: ${{env.working-directory}}
 
-        name: Import bit
+      - name: Import bit
         run: bit import komarov-sergey.sk-lib/app
         working-directory: ${{env.working-directory}}
 
