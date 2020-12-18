@@ -18,15 +18,18 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: ${{env.working-directory}}
+
       - name: Install bit-bin
         run: sudo npm install bit-bin -g
-        # name: Init bit
-        # run: bit init
-        # working-directory: ${{env.working-directory}}
-        # #need to improve this step
-        # name: Import bit components
-        # run: bit import komarov-sergey.sk-lib/app
-        # working-directory: ${{env.working-directory}}
+
+        name: Init bit
+        run: bit init
+        working-directory: ${{env.working-directory}}
+
+        name: Import bit components
+        run: bit import komarov-sergey.sk-lib/app
+        working-directory: ${{env.working-directory}}
+
       - name: Config bit
         run: |
           bit config set analytics_reporting false
@@ -34,13 +37,16 @@ jobs:
           bit config set user.token $BIT_TOKEN
           bit config
         working-directory: ${{env.working-directory}}
+
       - name: Install compiler
         run: npm i @bit/bit.envs.compilers.react-typescript
         working-directory: ${{env.working-directory}}
+
       - name: Import bit
         run: |
           bit -v && bit import
         working-directory: ${{env.working-directory}}
+        
       - name: Export bit
         run: |
           bit status
