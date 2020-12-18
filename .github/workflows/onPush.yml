@@ -5,8 +5,6 @@ on:
     branches: [master]
     paths:
       - "exporter/**"
-  # pull_request:
-  #   branches: [master]
 
 jobs:
   build:
@@ -20,26 +18,36 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: ${{env.working-directory}}
-      - name: Build app
-        run: npm run build-dev
-        working-directory: ${{env.working-directory}}
+
       - name: Install bit-bin
         run: sudo npm install bit-bin -g
-      - name: bit config
+
+      - name: Init bit
+        run: bit init
+        working-directory: ${{env.working-directory}}
+
+      - name: Import bit components
+        run: bit import komarov-sergey.sk-lib/app
+        working-directory: ${{env.working-directory}}
+
+      - name: Config bit
         run: |
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
           bit config
         working-directory: ${{env.working-directory}}
-      - name: install compiler
+
+      - name: Install compiler
         run: npm i @bit/bit.envs.compilers.react-typescript
         working-directory: ${{env.working-directory}}
-      - name: bit import
+
+      - name: Import bit
         run: |
           bit -v && bit import
         working-directory: ${{env.working-directory}}
-      - name: bit export
+
+      - name: Export bit
         run: |
           bit status
           bit tag -a
