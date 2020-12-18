@@ -2,7 +2,7 @@
   "name": "exporter",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/index.js",
+  "main": "",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,8 +17,5 @@
     },
     "componentsDefaultDirectory": "components/{name}",
     "packageManager": "npm"
-  },
-  "dependencies": {
-    "@bit/komarov-sergey.sk-lib.app": "file:./components/app"
   }
 }
