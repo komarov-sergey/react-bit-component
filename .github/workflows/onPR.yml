@@ -32,7 +32,7 @@ jobs:
         working-directory: ${{env.working-directory}}
 
       - name: Install compiler
-        run: npm i @bit/bit.envs.compilers.react-typescript
+        run: npm i @bit/bit.envs.compilers.react-typescript --compiler
         working-directory: ${{env.working-directory}}
 
       - name: bit config
