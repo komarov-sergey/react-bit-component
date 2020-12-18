@@ -27,23 +27,22 @@ jobs:
         run: bit init
         working-directory: ${{env.working-directory}}
 
-      - name: Import bit components
-        run: bit import komarov-sergey.sk-lib/app
-        working-directory: ${{env.working-directory}}
-
-      - name: Install compiler
-        run: npm i @bit/bit.envs.compilers.react-typescript --compiler
-        working-directory: ${{env.working-directory}}
-
-      - name: bit config
+      - name: ConFig & Import bit components
         run: |
           bit config set analytics_reporting false
           bit config set anonymous_reporting false
           bit config set user.token $BIT_TOKEN
           bit config
 
-          bit -v && bit import
+          bit import komarov-sergey.sk-lib/app
+        working-directory: ${{env.working-directory}}
 
+      - name: Install compiler
+        run: npm i @bit/bit.envs.compilers.react-typescript --compiler
+        working-directory: ${{env.working-directory}}
+
+      - name: Status & Test bit
+        run: |
           bit status
           bit test
         working-directory: ${{env.working-directory}}
