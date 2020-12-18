@@ -27,14 +27,14 @@ jobs:
         run: bit init
         working-directory: ${{env.working-directory}}
 
-        name: Import bit components
-        run: bit import komarov-sergey.sk-lib/app  
+      - name: Import bit components
+        run: bit import komarov-sergey.sk-lib/app
         working-directory: ${{env.working-directory}}
 
       - name: Install compiler
         run: npm i @bit/bit.envs.compilers.react-typescript
         working-directory: ${{env.working-directory}}
-        
+
       - name: bit config
         run: |
           bit config set analytics_reporting false

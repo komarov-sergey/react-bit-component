@@ -22,11 +22,11 @@ jobs:
       - name: Install bit-bin
         run: sudo npm install bit-bin -g
 
-        name: Init bit
+      - name: Init bit
         run: bit init
         working-directory: ${{env.working-directory}}
 
-        name: Import bit components
+      - name: Import bit components
         run: bit import komarov-sergey.sk-lib/app
         working-directory: ${{env.working-directory}}
 
@@ -46,7 +46,7 @@ jobs:
         run: |
           bit -v && bit import
         working-directory: ${{env.working-directory}}
-        
+
       - name: Export bit
         run: |
           bit status
