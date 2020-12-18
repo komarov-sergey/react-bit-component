@@ -19,9 +19,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: ${{env.working-directory}}
-      - name: Build app
-        run: npm run build-dev
-        working-directory: ${{env.working-directory}}
+      # - name: Build app
+      #   run: npm run build-dev
+      # working-directory: ${{env.working-directory}}
       - name: Install bit-bin
         run: sudo npm install bit-bin -g
       - name: install compiler
