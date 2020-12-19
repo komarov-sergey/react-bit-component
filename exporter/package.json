@@ -15,5 +15,8 @@
     "env": {},
     "componentsDefaultDirectory": "components/{name}",
     "packageManager": "npm"
+  },
+  "dependencies": {
+    "@bit/komarov-sergey.sk-lib.app": "file:./components/app"
   }
 }

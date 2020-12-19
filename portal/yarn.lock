@@ -1127,10 +1127,13 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bit/komarov-sergey.sk-lib.app@^0.0.3":
-  version "0.0.3"
-  resolved "https://node.bit.dev/komarov-sergey.sk-lib.app/-/komarov-sergey.sk-lib.app-0.0.3.tgz#ea9c92df85703d277eb9ecb33655e7dcdc571f26"
-  integrity sha1-6pyS34VwPSd+ueyzNlXn3NxXHyY=
+"@bit/komarov-sergey.sk-lib.app@^0.0.6":
+  version "0.0.6"
+  resolved "https://node.bit.dev/komarov-sergey.sk-lib.app/-/komarov-sergey.sk-lib.app-0.0.6.tgz#8830224da88d8cfbb59759ff623563c2350d89b3"
+  integrity sha1-iDAiTaiNjPu1l1n/YjVjwjUNibM=
+
+"@bit/komarov-sergey.sk-lib.app@file:../exporter/components/app":
+  version "0.0.6"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
@@ -4235,13 +4238,6 @@ emojis-list@^3.0.0:
   resolved "https://registry.yarnpkg.com/emojis-list/-/emojis-list-3.0.0.tgz#5570662046ad29e2e916e71aae260abdff4f6a78"
   integrity sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
 
-"empty-project@file:../../npm-inport-try/webpack-typescript":
-  version "1.0.0"
-  dependencies:
-    empty-project "file:../../npm-inport-try/webpack-typescript"
-    react "^17.0.1"
-    react-dom "^17.0.1"
-
 encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
@@ -4742,7 +4738,7 @@ expect@^26.6.0, expect@^26.6.2:
 "exporter@file:../exporter":
   version "0.0.1"
   dependencies:
-    empty-project "file:../../npm-inport-try/webpack-typescript"
+    "@bit/komarov-sergey.sk-lib.app" "file:../../../Library/Caches/Yarn/v6/npm-exporter-0.0.1-608c920d-6fa6-45ce-b64b-ddfbee0409ef-1608326194824/node_modules/exporter/components/app"
 
 express@^4.17.1:
   version "4.17.1"
