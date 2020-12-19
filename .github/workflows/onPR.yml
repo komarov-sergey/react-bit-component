@@ -35,12 +35,12 @@ jobs:
           bit config
         working-directory: ${{env.working-directory}}
 
-      - name: Import bit
-        run: bit import komarov-sergey.sk-lib/app
-        working-directory: ${{env.working-directory}}
-
       - name: Install compiler
         run: npm i @bit/bit.envs.compilers.react-typescript --compiler
+        working-directory: ${{env.working-directory}}
+
+      - name: Import bit
+        run: bit import komarov-sergey.sk-lib/app
         working-directory: ${{env.working-directory}}
 
       - name: Status & Test bit
